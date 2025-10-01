@@ -37,7 +37,7 @@ const About = () => {
         {/* Deskripsi Singkat */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-lg leading-relaxed">
-            Halo! Saya adalah seorang pengembang perangkat lunak yang bersemangat dengan pengalaman lebih dari 3 tahun dalam membangun aplikasi web yang menarik dan fungsional. Saya memiliki keahlian dalam React, Next.js, dan Tailwind CSS, dan selalu mencari tantangan baru untuk mengembangkan diri.
+            Lulusan Informatika Universitas PGRI Semarang tahun 2022. Saya telah berkarier sebagai Front-End Web Developer sejak 2021, membangun aplikasi web yang menarik dan fungsional. Berkat dedikasi dan keahlian saya dalam Flutter, Next.js, dan Tailwind CSS, saya dipercaya memimpin berbagai proyek, menunjukkan kemampuan saya dalam menyelesaikan tantangan dan mencapai target.
           </p>
         </div>
 

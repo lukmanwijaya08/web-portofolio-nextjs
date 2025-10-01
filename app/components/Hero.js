@@ -12,9 +12,12 @@ const Hero = ({ name, title, photo, socialMedia }) => {
     // Pastikan kode berjalan di sisi klien saja
     if (typeof window === 'undefined') return;
     if (!mountRef.current) return;
+    
+    // Simpan referensi ke variabel lokal untuk digunakan di cleanup
+    const currentMount = mountRef.current;
 
-    let width = mountRef.current.clientWidth;
-    let height = mountRef.current.clientHeight;
+    let width = currentMount.clientWidth;
+    let height = currentMount.clientHeight;
 
     // Inisialisasi Scene, Camera, dan Renderer
     const scene = new THREE.Scene();
@@ -23,7 +26,7 @@ const Hero = ({ name, title, photo, socialMedia }) => {
     
     renderer.setSize(width, height);
     renderer.setPixelRatio(window.devicePixelRatio);
-    mountRef.current.appendChild(renderer.domElement);
+    currentMount.appendChild(renderer.domElement);
 
     // Tambahkan pencahayaan
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -73,9 +76,9 @@ const Hero = ({ name, title, photo, socialMedia }) => {
 
     // Penanganan resize
     const handleResize = () => {
-      if (!mountRef.current) return;
-      width = mountRef.current.clientWidth;
-      height = mountRef.current.clientHeight;
+      if (!currentMount) return;
+      width = currentMount.clientWidth;
+      height = currentMount.clientHeight;
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
@@ -86,8 +89,8 @@ const Hero = ({ name, title, photo, socialMedia }) => {
     return () => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
-      if (mountRef.current) {
-        mountRef.current.removeChild(renderer.domElement);
+      if (currentMount) {
+        currentMount.removeChild(renderer.domElement);
       }
     };
   }, []);
@@ -99,7 +102,7 @@ const Hero = ({ name, title, photo, socialMedia }) => {
         <h1 className="text-xl text-[#A06CFF] mb-2">Hello Guys,</h1>
         <h2 className="text-5xl lg:text-7xl font-bold leading-tight">I am <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#A06CFF] to-[#D5A0FF]">{name}</span></h2>
         <p className="text-gray-400 mt-4 text-lg max-w-xl">
-          Write a short and sweet description about who you are, what you do, and what you want.
+          Frontend Web Dev | Full Stack Web Dev | Forever Learner
         </p>
         <div className="mt-8">
           <a href="#projects" className="relative text-[#A06CFF] py-3 px-8 rounded-full text-lg font-semibold border border-[#A06CFF] hover:bg-[#A06CFF] hover:text-white transition-all duration-300 hover:scale-105 shadow-lg">
