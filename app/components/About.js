@@ -8,21 +8,21 @@ const About = () => {
   // Data untuk riwayat edukasi atau pengalaman, bisa disesuaikan
   const timelineData = [
     {
-      year: "2018",
-      title: "Lulusan Sekolah Menengah",
-      institution: "SMA Negeri 1 Jakarta",
-      description: "Fokus pada bidang Ilmu Pengetahuan Alam (IPA)."
+      year: "2014",
+      title: "Lulusan Sekolah Menengah Kejurua",
+      institution: "SMK Negeri 3 Kendal",
+      description: "Rekayasa Perangkat Lunak."
     },
     {
       year: "2022",
       title: "Sarjana Teknik Informatika",
-      institution: "Universitas XYZ",
+      institution: "Universitas PGRI Semarang",
       description: "Spesialisasi dalam Pengembangan Perangkat Lunak dan Web."
     },
     {
-      year: "2023",
-      title: "Mulai Karir sebagai Pengembang",
-      institution: "PT. Teknologi Maju",
+      year: "2021",
+      title: "Mulai Karir sebagai Junior Web Dev",
+      institution: "CV. Fun Teknologi",
       description: "Memulai sebagai Junior Frontend Developer."
     },
   ];

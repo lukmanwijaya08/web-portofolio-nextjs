@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Home, User, FolderKanban, Award, MessageSquare } from 'lucide-react';
+import { Home, User, FolderKanban, Award, Download } from 'lucide-react';
 
 const navLinks = [
   { name: "Home", href: "#hero", icon: <Home size={24} /> },
@@ -19,14 +19,9 @@ const Header = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Mengatur tautan aktif berdasarkan ID section yang terlihat
             const newActiveLink = navLinks.find(link => link.href === `#${entry.target.id}`);
             if (newActiveLink) {
               setActiveLink(newActiveLink.name);
-            }
-            // Logic tambahan untuk 'Contact Me' jika section 'footer' yang terlihat
-            if (entry.target.id === 'contact-me') {
-              setActiveLink('Contact Me');
             }
           }
         });
@@ -38,18 +33,13 @@ const Header = () => {
       }
     );
 
-    // Mengamati setiap section
+    // Mengamati setiap section kecuali tautan Download CV
     navLinks.forEach(link => {
       const section = document.querySelector(link.href);
       if (section) {
         observer.observe(section);
       }
     });
-
-    const contactSection = document.querySelector('#contact-me');
-    if (contactSection) {
-      observer.observe(contactSection);
-    }
 
     return () => {
       observer.disconnect();
@@ -74,8 +64,13 @@ const Header = () => {
                 {link.name}
               </a>
             ))}
-            <a href="#contact-me" className={`text-[#A06CFF] border border-[#A06CFF] px-6 py-2 rounded-lg hover:bg-[#A06CFF] hover:text-white transition-colors duration-300 transform hover:scale-105 ${activeLink === 'Contact Me' ? 'bg-[#A06CFF] text-white' : ''}`}>
-              Contact Me
+            <a 
+              href="https://drive.google.com/file/d/1fEkdvZlBP7F8Nur41UMlqwQg_gpZVE8y/view?usp=sharing" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#A06CFF] border border-[#A06CFF] px-6 py-2 rounded-lg hover:bg-[#A06CFF] hover:text-white transition-colors duration-300 transform hover:scale-105"
+            >
+              Download CV
             </a>
           </nav>
         </div>
@@ -99,17 +94,15 @@ const Header = () => {
               )}
             </a>
           ))}
+          {/* Tombol Download CV di navigasi mobile */}
           <a 
-            href="#contact-me" 
-            className={`flex flex-col items-center justify-center p-3 m-1 rounded-[16px] transition-all duration-300
-              ${activeLink === "Contact Me" 
-                ? 'text-[#A06CFF] shadow-lg'
-                : 'text-gray-400 hover:text-[#A06CFF] hover:bg-[#3b3b3b]'}`}
+            href="https://drive.google.com/file/d/1fEkdvZlBP7F8Nur41UMlqwQg_gpZVE8y/view?usp=drive_link" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center justify-center p-3 m-1 rounded-[16px] transition-all duration-300 text-gray-400 hover:text-[#A06CFF] hover:bg-[#3b3b3b]"
           >
-            <MessageSquare size={24} />
-            {activeLink === "Contact Me" && (
-                <span className="text-xs font-medium mt-1 animate-fadeIn">Contact Me</span>
-              )}
+            <Download size={24} />
+            <span className="text-xs font-medium mt-1 animate-fadeIn">Download CV</span>
           </a>
         </nav>
       </footer>

@@ -10,13 +10,13 @@ import Footer from './components/Footer';
 
 const portfolioData = {
   name: "Lukman Wijayanto",
-  title: "Frontend Developer", 
+  title: "Frontend Developer",
   photo: "/images/bg-foto.png",
   socialMedia: [
     { name: "Facebook", icon: "/images/facebook.png", link: "#" },
-    { name: "Instagram", icon: "/images/instagram.png", link: "#" },
+    { name: "Instagram", icon: "/images/instagram.png", link: "https://instagram.com/lukmanwijaya" },
     { name: "Whatsapp", icon: "/images/whatsapp.png", link: "#" },
-    { name: "LinkedIn", icon: "/images/linkdn.png", link: "#" },
+    { name: "LinkedIn", icon: "/images/linkdn.png", link: "https://id.linkedin.com/in/lukman-wijayanto-98684a214" },
   ],
 };
 
@@ -27,10 +27,10 @@ const projectsData = [
 ];
 
 const servicesData = [
-  { icon: "🎨", title: "UI/UX Design", description: "Deskripsi singkat tentang layanan ini." },
-  { icon: "💻", title: "Web Development", description: "Deskripsi singkat tentang layanan ini." },
-  { icon: "📱", title: "Mobile Apps", description: "Deskripsi singkat tentang layanan ini." },
-  { icon: "🚀", title: "API Integration", description: "Deskripsi singkat tentang layanan ini." },
+  { icon: "耳", title: "UI/UX Design", description: "Deskripsi singkat tentang layanan ini." },
+  { icon: "捗", title: "Web Development", description: "Deskripsi singkat tentang layanan ini." },
+  { icon: "導", title: "Mobile Apps", description: "Deskripsi singkat tentang layanan ini." },
+  { icon: "噫", title: "API Integration", description: "Deskripsi singkat tentang layanan ini." },
 ];
 
 const testimonialData = {
@@ -40,9 +40,13 @@ const testimonialData = {
 };
 
 const skillsData = [
-  { name: "Photoshop", icon: "/images/ps.png" },
+  { name: "VS Code", icon: "/images/vs-code.png" },
   { name: "Figma", icon: "/images/figma.png" },
-  // ... Tambahkan tools lainnya
+  { name: "MySQL", icon: "/images/mysql.png" },
+  { name: "React.js", icon: "/images/react.png" },
+  { name: "Next.js", icon: "/images/nextjs.png" },
+  { name: "CodeIgniter", icon: "/images/codeigniter.png" },
+  { name: "Laravel", icon: "/images/laravel.png" },
 ];
 
 const HomePage = () => {
@@ -51,8 +55,8 @@ const HomePage = () => {
       <Header />
       <main className="container mx-auto px-4 lg:px-20">
         <div id="hero">
-          <Hero 
-            name={portfolioData.name} 
+          <Hero
+            name={portfolioData.name}
             title={portfolioData.title}
             photo={portfolioData.photo}
             socialMedia={portfolioData.socialMedia}
