@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 const portfolioData = {
   name: "Lukman Wijayanto",
   title: "Frontend Developer",
-  photo: "/images/bg-foto.png",
+  photo: "/images/bg-foto1.png",
   socialMedia: [
     { name: "Facebook", icon: "/images/facebook.png", link: "#" },
     { name: "Instagram", icon: "/images/instagram.png", link: "https://instagram.com/lukmanwijaya" },
